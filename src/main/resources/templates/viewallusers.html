@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+		<title>User Registration</title>
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">First Name</th>
+					<th scope="col">Last Name</th>
+					<th scope="col">Email</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr th:each="user:${allusers}">
+						<td th:text="${user.firstName}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.email}"></td>
+					</tr>
+			</tbody>
+		</table>
+</body>
+</html>

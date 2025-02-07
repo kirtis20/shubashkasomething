@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>User Registration</title>
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	</head>
+	<body>
+		<p align="center">
+			<a th:href="@{/userform}" class="btn tn-info">Add User</a>
+		</p>
+		<table class="table table-bordered table-sm">
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user:${allusers}">
+					<td th:text="${user.firstName}"></td>
+					<td th:text="${user.lastName}"></td>
+					<td th:text="${user.email}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
