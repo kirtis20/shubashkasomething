@@ -5,14 +5,16 @@
 		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 	</head>
 	<body>
-		<form th:action="@{/saveuser}" th:object="${user}" method="POST">
+		<form th:action="@{/saveupdateuser}" th:object="${user}" method="POST">
+			<label> UserId </label>
+			<input type = "text" th:field="*{id}" placeholder="User Id	" class="form-control mb-4 col-4">
 			<label> Email </label>
 			<input type = "text" th:field="*{email}" placeholder="User EMail	" class="form-control mb-4 col-4">
 			<label>				First Name </label>
 			<input type = "text" th:field="*{firstName}" placeholder="First Name	" class="form-control mb-4 col-4">
 			<label>				Last Name			</label>
 			<input type = "text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
-			<button type ="submit" class="btn btn-info col-2">Save User</button>
+			<button type ="submit" class="btn btn-info col-2">Update User</button>
 		</form>
 		<hr>
 		<a th:href="@{/adduser}">Back to User Record</a>

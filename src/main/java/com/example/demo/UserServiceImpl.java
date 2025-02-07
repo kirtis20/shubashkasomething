@@ -37,7 +37,12 @@ public class UserServiceImpl implements UserService {
 	public User updateUser(User user) {
 		
 		// TODO Auto-generated method stub
-		return null;
+		User existingUser = userRepository.findById(user.getId()).get();
+		existingUser.setFirstName(user.getFirstName());
+		existingUser.setLastName(user.getLastName());
+		existingUser.setEmail(user.getEmail());
+		User updatedUser =userRepository.save(existingUser);
+		return updatedUser;
 	}
 
 	@Override
